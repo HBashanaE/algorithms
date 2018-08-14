@@ -2,7 +2,7 @@
 
 ## Graph Terminology
 
-![Graph Theory Terminology](https://www.codeproject.com/KB/cpp/graphtheoryud0/main.gif)
+![Graph Theory Terminology](README\terminology-1.gif)
 
 A graph consists of **nodes** and **edges**. In above graph `A, B, E, F, G, H, K and M` are nodes. All connectors are edges.
 
@@ -12,7 +12,7 @@ Graph is **connected** if there is a path between any two nodes meaning that you
 
 **Components** are each separate part of a graph. In below graph `{1, 2, 3, 4}` and `{5}` are the components of the graph.
 
-![Disconnected Graph](http://1.bp.blogspot.com/-5qqeNCOEwIU/UO_tOGNPEAI/AAAAAAAAAks/YWql0-VRFNI/s1600/disconnected+graph.jpg)
+![Disconnected Graph](README\terminology-2.jpg)
 
 **Tree** is a *connected* graph with *n-1* nodes so there is one and only one *unique* path between any two nodes. If we take `{1, 2, 3, 4}` component of above graph as a separate graph, it would be a tree.
 
@@ -33,3 +33,20 @@ A graph can be represented in
 - Adjacency List
 - Adjacency Matrix
 - Edge List
+
+## Graph Traversal
+
+A graph can be traversed using several algorithms.
+
+### Depth First Search Algorithm
+
+Starts from a node and visits all nodes that can be visited from that node.
+
+![Depth First Search](README\traversal-1.jpg)
+
+Especially useful when,
+
+- Simply traversing the whole graph applying some algorithm to each node
+- Finding whether a graph is connected
+- Finding all nodes which can be traversed from one node
+- Search for a node

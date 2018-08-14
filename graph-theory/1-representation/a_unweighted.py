@@ -2,7 +2,7 @@
 Adjacency List Representation.
 Each node contains its neighbor nodes.
 """
-adjLstGraph = {
+adj_list_graph = {
     0: set(),
     1: {4},
     2: {4, 5},
@@ -15,7 +15,7 @@ adjLstGraph = {
 Adjacency Matrix Representation.
 Each row and column represent a node and values represent 1 if there is an edge, 0 if no edge.
 """
-adjMatGraph = [
+adj_matrix_graph = [
     [0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 1, 0],
     [0, 0, 0, 0, 1, 1],
@@ -28,7 +28,7 @@ adjMatGraph = [
 Edge List Representation.
 Each tuple represent a node between two nodes use if finding edges that start at a node is not important.
 """
-edgeLstGraph = {
+edge_list_graph = {
     (1, 4),
     (2, 4),
     (4, 1),

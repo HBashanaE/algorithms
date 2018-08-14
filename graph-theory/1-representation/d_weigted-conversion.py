@@ -4,119 +4,119 @@ Converting from one graph representation to another.
 import b_weighted
 
 
-def adjacencyListToAdjacencyMatrix(adjList: dict) -> list:
+def adjacency_list_to_adjacency_matrix(adj_list: dict) -> list:
     """Graph should have nodes as 0..n"""
 
-    n = len(adjList)
-    adjMat = [[0]*n for _ in range(n)]
-    for node in adjList:
-        for neighbor in adjList[node]:
-            adjMat[node][neighbor] = adjList[node][neighbor]
+    n = len(adj_list)
+    adj_mat = [[0]*n for _ in range(n)]
+    for node in adj_list:
+        for neighbor in adj_list[node]:
+            adj_mat[node][neighbor] = adj_list[node][neighbor]
 
-    return adjMat
+    return adj_mat
 
 
-def adjacencyListToEdgeList(adjList: dict) -> set:
+def adjacency_list_to_edge_list(adj_list: dict) -> set:
     """Edge List Items will be sorted so node with smaller index will appear first"""
 
-    edgeList = set()
-    for node in adjList:
-        for neighbor in adjList[node]:
-            edge = (node, neighbor, adjList[node][neighbor])
-            edgeList.add(edge)
-    return edgeList
+    edge_list = set()
+    for node in adj_list:
+        for neighbor in adj_list[node]:
+            edge = (node, neighbor, adj_list[node][neighbor])
+            edge_list.add(edge)
+    return edge_list
 
 
-def adjacencyMatrixToAdjacencyList(adjMat: list) -> dict:
+def adjacency_matrix_to_adjacency_list(adj_mat: list) -> dict:
     """Adjacency List will have indexed nodes 0...n"""
 
-    adjList = {}
-    n = len(adjMat)
+    adj_list = {}
+    n = len(adj_mat)
     for node in range(n):
-        adjList[node] = {}
+        adj_list[node] = {}
         for neighbor in range(n):
-            if adjMat[node][neighbor] != 0:
-                adjList[node][neighbor] = adjMat[node][neighbor]
-    return adjList
+            if adj_mat[node][neighbor] != 0:
+                adj_list[node][neighbor] = adj_mat[node][neighbor]
+    return adj_list
 
 
-def adjacencyMatrixToEdgeList(adjMat: list) -> set:
+def adjacency_matrix_to_edge_list(adj_mat: list) -> set:
     """Edge List will have indexed nodes 0...n"""
 
-    edgeList = set()
-    n = len(adjMat)
+    edge_list = set()
+    n = len(adj_mat)
     for node in range(n):
         for neighbor in range(node, n):
-            if adjMat[node][neighbor] != 0:
-                edgeList.add((node, neighbor, adjMat[node][neighbor]))
-    return edgeList
+            if adj_mat[node][neighbor] != 0:
+                edge_list.add((node, neighbor, adj_mat[node][neighbor]))
+    return edge_list
 
 
-def edgeListToAdjacencyList(edgeLst: set) -> dict:
+def edge_list_to_adjacency_list(edge_lst: set) -> dict:
     """Graph should have nodes as 0..n"""
 
-    adjLst = {}
-    for edge in edgeLst:
+    adj_lst = {}
+    for edge in edge_lst:
         a, b, w = edge
-        if a not in adjLst:
-            adjLst[a] = {}
-        if b not in adjLst:
-            adjLst[b] = {}
-        adjLst[a][b] = w
-    max_node = max(adjLst)
+        if a not in adj_lst:
+            adj_lst[a] = {}
+        if b not in adj_lst:
+            adj_lst[b] = {}
+        adj_lst[a][b] = w
+    max_node = max(adj_lst)
     for node in range(max_node + 1):
-        if node not in adjLst:
-            adjLst[node] = {}
-    return adjLst
+        if node not in adj_lst:
+            adj_lst[node] = {}
+    return adj_lst
 
 
-def edgeListToAdjacencyMatrix(edgeLst: set) -> list:
+def edge_list_to_adjacency_matrix(edge_lst: set) -> list:
     """Graph should have nodes as 0..n"""
 
     max_node = -1
-    for edge in edgeLst:
+    for edge in edge_lst:
         bigger_node = max(edge[0], edge[1])
         max_node = max(max_node, bigger_node)
     n = max_node + 1
-    adjMat = [[0]*n for _ in range(n)]
-    for edge in edgeLst:
+    adj_mat = [[0]*n for _ in range(n)]
+    for edge in edge_lst:
         a, b, w = edge
         if b < a:
             a, b = b, a
-        adjMat[a][b] = w
-    return adjMat
+        adj_mat[a][b] = w
+    return adj_mat
 
 
 # -----------------------------------------------------------------------
 # TESTS -----------------------------------------------------------------
 # -----------------------------------------------------------------------
 assert(
-    adjacencyListToAdjacencyMatrix(b_weighted.adjLstGraph)
+    adjacency_list_to_adjacency_matrix(b_weighted.adj_list_graph)
     ==
-    b_weighted.adjMatGraph
+    b_weighted.adj_matrix_graph
 )
 assert(
-    adjacencyListToEdgeList(b_weighted.adjLstGraph)
+    adjacency_list_to_edge_list(b_weighted.adj_list_graph)
     ==
-    b_weighted.edgeLstGraph
+    b_weighted.edge_list_graph
 )
 assert(
-    adjacencyMatrixToAdjacencyList(b_weighted.adjMatGraph)
+    adjacency_matrix_to_adjacency_list(b_weighted.adj_matrix_graph)
     ==
-    b_weighted.adjLstGraph
+    b_weighted.adj_list_graph
 )
 assert(
-    adjacencyMatrixToEdgeList(b_weighted.adjMatGraph)
+    adjacency_matrix_to_edge_list(b_weighted.adj_matrix_graph)
     ==
-    b_weighted.edgeLstGraph
+    b_weighted.edge_list_graph
 )
 assert(
-    edgeListToAdjacencyList(b_weighted.edgeLstGraph)
+    edge_list_to_adjacency_list(b_weighted.edge_list_graph)
     ==
-    b_weighted.adjLstGraph
+    b_weighted.adj_list_graph
 )
 assert(
-    edgeListToAdjacencyMatrix(b_weighted.edgeLstGraph)
+    edge_list_to_adjacency_matrix(b_weighted.edge_list_graph)
     ==
-    b_weighted.adjMatGraph
+    b_weighted.adj_matrix_graph
 )
