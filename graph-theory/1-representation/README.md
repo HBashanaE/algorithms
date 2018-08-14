@@ -4,7 +4,7 @@
 
 Adjacency List, Adjacency Matrix and Edge List representation of same graph.
 
-![Unweighted Graph](..\README\terminology-3.png)
+![Unweighted Graph](../README/terminology-3.png)
 
 **File: `a_unweighted.py`**
 
@@ -14,7 +14,7 @@ Adjacency List, Adjacency Matrix and Edge List representation of same graph.
 
 Adjacency List, Adjacency Matrix and Edge List representation of same graph.
 
-![Weighted Graph](..\README\terminology-4.png)
+![Weighted Graph](../README/terminology-4.png)
 
 **File: `a_unweighted.py`**
 
