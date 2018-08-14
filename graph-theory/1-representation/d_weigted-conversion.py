@@ -19,13 +19,10 @@ def adjacencyListToAdjacencyMatrix(adjList: dict) -> list:
 def adjacencyListToEdgeList(adjList: dict) -> set:
     """Edge List Items will be sorted so node with smaller index will appear first"""
 
-    def num2sort(a, b, w):
-        return (a, b, w) if a < b else (b, a, w)
-
     edgeList = set()
     for node in adjList:
         for neighbor in adjList[node]:
-            edge = num2sort(node, neighbor, adjList[node][neighbor])
+            edge = (node, neighbor, adjList[node][neighbor])
             edgeList.add(edge)
     return edgeList
 
@@ -90,6 +87,9 @@ def edgeListToAdjacencyMatrix(edgeLst: set) -> list:
     return adjMat
 
 
+# -----------------------------------------------------------------------
+# TESTS -----------------------------------------------------------------
+# -----------------------------------------------------------------------
 assert(
     adjacencyListToAdjacencyMatrix(b_weighted.adjLstGraph)
     ==
