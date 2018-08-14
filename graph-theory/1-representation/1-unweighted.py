@@ -9,7 +9,7 @@ adjLstGraph = {
 }
 
 # Adjacency Matrix Representation
-# Each row and column represent a node and 
+# Each row and column represent a node and
 # values represent 1 if there is an edge, 0 if no edge
 adjMatGraph = [
     [0, 0, 0, 1, 0],

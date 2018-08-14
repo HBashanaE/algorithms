@@ -1,7 +1,3 @@
-[TOC]
-
-------
-
 # Graph Theory
 
 ## Graph Terminology    
@@ -30,79 +26,11 @@ Graph is **connected** if there is a path between any two nodes meaning that you
 
 **Simple graph** is a graph which does not have edges that start and end at the same node and does not have multiple edges between two nodes.
 
-
-
 ## Graph Representation
 
-### Unweighted Graphs
+A graph can be represented in
 
-![Unweighted Graph](http://www.algolist.net/img/graphs/graph-ir-1.png) 
-
-```python
-# Adjacency List Representation
-# Each node contains its neighbor nodes
-adjLstGraph = {
-    1: {4},
-    2: {4, 5},
-    3: {5},
-    4: {3, 5},
-    5: {2, 3, 4}
-}
-
-# Adjacency Matrix Representation
-# Each row and column represent a node and 
-# values represent 1 if there is an edge, 0 if no edge
-adjMatGraph = [
-    [0, 0, 0, 1, 0],
-    [0, 0, 0, 1, 1],
-    [0, 0, 0, 0, 1],
-    [1, 1, 0, 0, 1],
-    [0, 1, 1, 1, 0],
-]
-
-# Edge List Representation
-# Each tuple represent a node between two nodes
-# use if finding edges that start at a node is not important
-edgeLstGraph = {
-    (1, 4),
-    (2, 4),
-    (5, 4),
-    (2, 5),
-    (3, 5),
-}
-```
-
-### Weighted Graphs
-
-![Weighted Graph](https://www.geeksforgeeks.org/wp-content/uploads/graph-STL.png) 
-
-```python
-# Adjacency List Representation
-# Each node contains its neighbor nodes and its weight
-adjLstGraph = {
-    0: {1:10, 2:3, 3:2},
-    1: {3:7},
-    2: {3:6},
-    3: {},
-}
-
-# Adjacency Matrix Representation
-# Values represent weights, 0 if no edge
-adjMatGraph = [
-    [0, 10, 3, 2],
-    [0, 0, 7, 0],
-    [0, 0, 0, 6],
-    [0, 0, 0, 0],
-]
-
-# Edge List Representation
-# Each tuple represent a node between two nodes and weight (a, b, w)
-edgeLstGraph = {
-    (0, 1, 10),
-    (0, 2, 3),
-    (0, 3, 2),
-    (1, 3, 7),
-    (2, 3, 6),
-}
-```
+- Adjacency List
+- Adjacency Matrix
+- Edge List
 
