@@ -24,12 +24,12 @@ Adjacency List, Adjacency Matrix and Edge List representation of same graph.
 
 | Convert From     | Convert To       | Function Name                       |
 | ---------------- | ---------------- | ----------------------------------- |
-| Adjacency List   | Adjacency Matrix | `adjacencyListToAdjacencyMatrix()` |
-| Adjacency List   | Edge List        | `adjacencyListToEdgeList ()`        |
-| Adjacency Matrix | Adjacency List   | `adjacencyMatrixToAdjacencyList ()` |
-| Adjacency Matrix | Edge List        | `adjacencyMatrixToEdgeList ()`      |
-| Edge List        | Adjacency List   | `edgeListToAdjacencyList ()`        |
-| Edge List        | Adjacency Matrix | `edgeListToAdjacencyMatrix ()`      |
+| Adjacency List   | Adjacency Matrix | `adjacency_list_to_adjacency_matrix()` |
+| Adjacency List   | Edge List        | `adjacency_list_to_edge_list ()` |
+| Adjacency Matrix | Adjacency List   | `adjacency_matrix_to_adjacency_list ()` |
+| Adjacency Matrix | Edge List        | `adjacency_matrix_to_edge_list ()` |
+| Edge List        | Adjacency List   | `edge_list_to_adjacency_list ()` |
+| Edge List        | Adjacency Matrix | `edge_list_to_adjacency_matrix ()` |
 
 **Unweighted Graphs : `c_unweigted-conversion.py`**
 
