@@ -40,7 +40,7 @@ A graph can be traversed using mainly two algorithms.
 
 ### Depth First Search Algorithm
 
-Starts from a node and visits all nodes that can be visited from that node recursively. Uses a `stack `data structure when implemented iteratively.
+Starts from a node and visits all nodes that can be visited from that node recursively. Uses a `stack`data structure when implemented iteratively.
 
 > Time complexity is O(n+m)
 
@@ -97,7 +97,7 @@ This algorithms requires graph to be represented as an **edge list**. However it
 
 **Fast** algorithm to **find distances from one node to all other nodes**. **Distances MUST BE positive**. If it contains negative lengths/weights this will give a wrong answer. This algorithm uses the fact that all distances are positive to process each edge only once.
 
-![Dijkstra Algorithm](README/shortest-paths-4.gif) 
+![Dijkstra Algorithm](README/shortest-paths-4.gif)
 
 - Set distance to all nodes as `INF` except for starting node. Distance to starting node in `0`.
 - Start from starting node.
@@ -109,3 +109,15 @@ This algorithms requires graph to be represented as an **edge list**. However it
 This should be processed using a `priorityQueue` (or `heapq` in python) in order to efficiently get node with minimum distance each time.
 
 > Time Complexity(`PriorityQueue`) is `O(n+mlogm)`. Otherwise `O(n^2)`
+
+### Floyd-Warshall Algorithm
+
+**Slow** algorithm to **find distances between all nodes**. If it contains negative lengths/weights this will give a wrong answer.  This is easy to implement but not suitable for large graphs.
+
+![Related image](README/shortest-paths-5.jpg)
+
+- Create a distance grid from graph so that distance from a node to itself is `0` and distance from node `A` to node `B` is the weight of edge between `A` and `B`. If no direct edge exists, distance in `INF`.
+- Take each `C` node as an intermediate node. Then take any two nodes `A` and `B` from the graph. If minimum distance in the path `A → C → B` is less than `A → B`, then update distance grid.
+- In the end grid will contain minimum distances between any two nodes
+
+> Time Complexity is `O(n^3)`

@@ -31,6 +31,6 @@ Adjacency List, Adjacency Matrix and Edge List representation of same graph.
 | Edge List        | Adjacency List   | `edge_list_to_adjacency_list ()` |
 | Edge List        | Adjacency Matrix | `edge_list_to_adjacency_matrix ()` |
 
-**Unweighted Graphs : `c_unweigted-conversion.py`**
+**Unweighted Graphs : `c_unweigted_conversion.py`**
 
-**Weighted Graphs :  `d_weigted-conversion.py`**
+**Weighted Graphs :  `d_weigted_conversion.py`**
