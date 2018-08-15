@@ -18,7 +18,7 @@ def contains_cycle(graph: dict) -> bool:
     return False
 
 
-def contains_cycle_specific(graph: dict) -> bool:
+def contains_cycle_specific(graph: dict, nodes: int) -> bool:
     """Returns True is graph contains a cycle.
     Uses the idea that if there isn't a cycle in a connected graph, it is a tree.
     Tree is a connected, undirected, cycleless graph.
@@ -26,43 +26,9 @@ def contains_cycle_specific(graph: dict) -> bool:
     So no of edges != n - 1 to have a cycle."""
 
     edges = 0
-    nodes = len(graph)
     for node in graph:
         edges += len(graph[node])
     # Since this is undirected, real edges is half of this value
     real_edges = edges//2
     # If there is a cycle, m != n -1
     return real_edges != nodes - 1
-
-
-# -----------------------------------------------------------------------
-# TESTS -----------------------------------------------------------------
-# -----------------------------------------------------------------------
-cycle_graph = {
-    1: {2, 5},
-    2: {1, 5, 3},
-    3: {2, 4},
-    4: {3, 5, 6},
-    5: {1, 2, 4},
-    6: {4}
-}
-no_cycle_graph = {
-    1: {4},
-    2: {4},
-    3: {4},
-    4: {1, 2, 3, 5},
-    5: {4, 6},
-    6: {5},
-}
-assert(
-    contains_cycle(cycle_graph)
-)
-assert(
-    not contains_cycle(no_cycle_graph)
-)
-assert(
-    contains_cycle_specific(cycle_graph)
-)
-assert(
-    not contains_cycle_specific(no_cycle_graph)
-)

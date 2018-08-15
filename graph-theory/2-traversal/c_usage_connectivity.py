@@ -38,22 +38,3 @@ def list_components(graph: dict) -> list:
             # Add current component to components list
             components.append(current_component)
     return components
-
-
-# -----------------------------------------------------------------------
-# TESTS -----------------------------------------------------------------
-# -----------------------------------------------------------------------
-graph = {
-    0: {1, 2, 4},
-    1: {0, 2, 3, 4},
-    2: {0, 1},
-    3: {1},
-    4: {0, 1},
-    5: set()
-}
-assert(
-    not is_connected(graph)
-)
-assert(
-    len(list_components(graph)) == 2
-)

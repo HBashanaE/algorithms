@@ -52,7 +52,7 @@ def adjacency_matrix_to_edge_list(adj_mat: list, nodes: int) -> set:
 def edge_list_to_adjacency_list(edge_list: set, nodes: int) -> dict:
     """Graph should have nodes as 0..n"""
 
-    adj_list = {node:set() for node in range(nodes)}
+    adj_list = {node: set() for node in range(nodes)}
     for edge in edge_list:
         a, b = edge
         adj_list[a].add(b)
@@ -68,38 +68,3 @@ def edge_list_to_adjacency_matrix(edge_list: set, nodes: int) -> list:
         a, b = edge
         adj_mat[a][b] = 1
     return adj_mat
-
-
-# -----------------------------------------------------------------------
-# TESTS -----------------------------------------------------------------
-# -----------------------------------------------------------------------
-assert(
-    adjacency_list_to_adjacency_matrix(
-        a_unweighted.adj_list_graph, a_unweighted.nodes)
-    == a_unweighted.adj_matrix_graph
-)
-assert(
-    adjacency_list_to_edge_list(
-        a_unweighted.adj_list_graph, a_unweighted.nodes)
-    == a_unweighted.edge_list_graph
-)
-assert(
-    adjacency_matrix_to_adjacency_list(
-        a_unweighted.adj_matrix_graph, a_unweighted.nodes)
-    == a_unweighted.adj_list_graph
-)
-assert(
-    adjacency_matrix_to_edge_list(
-        a_unweighted.adj_matrix_graph, a_unweighted.nodes)
-    == a_unweighted.edge_list_graph
-)
-assert(
-    edge_list_to_adjacency_list(
-        a_unweighted.edge_list_graph, a_unweighted.nodes)
-    == a_unweighted.adj_list_graph
-)
-assert(
-    edge_list_to_adjacency_matrix(
-        a_unweighted.edge_list_graph, a_unweighted.nodes)
-    == a_unweighted.adj_matrix_graph
-)

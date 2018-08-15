@@ -33,22 +33,3 @@ def bfs_distance(graph: dict, start: int, target: int) -> int:
             if neighbor not in visited:
                 queue.appendleft((neighbor, distance + 1))
     return float("inf")
-
-
-# -----------------------------------------------------------------------
-# TESTS -----------------------------------------------------------------
-# -----------------------------------------------------------------------
-graph = {
-    0: {1, 2, 4},
-    1: {0, 2, 3, 4},
-    2: {0, 1},
-    3: {1},
-    4: {0, 1},
-    5: set()
-}
-assert(
-    len(bfs_iter(graph, 0)) == 5
-)
-assert(
-    bfs_distance(graph, 0, 3) == 2
-)
