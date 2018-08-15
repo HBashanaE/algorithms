@@ -1,7 +1,5 @@
 # Graph Theory
 
-[TOC]
-
 ## Graph Terminology
 
 ![Graph Theory Terminology](README/terminology-1.gif)
@@ -16,7 +14,7 @@ Graph is **connected** if there is a path between any two nodes meaning that you
 
 ![Disconnected Graph](README/terminology-2.jpg)
 
-**Tree** is a *connected* graph with *n-1* nodes so there is one and only one *unique* path between any two nodes. If we take `{1, 2, 3, 4}` component of above graph as a separate graph, it would be a tree.
+**Tree** is a *connected undirected*  graph with *n-1* nodes so there is one and only one *unique* path between any two nodes. If we take `{1, 2, 3, 4}` component of above graph as a separate graph, it would be a tree.
 
 **Weighted graph** is a graph which has weight to every edge. Topmost Image is a weighted graph whereas above image is not. These weights can be imagined as lengths of the edges.
 
@@ -38,11 +36,11 @@ A graph can be represented in
 
 ## Graph Traversal
 
-A graph can be traversed using several algorithms.
+A graph can be traversed using mainly two algorithms.
 
 ### Depth First Search Algorithm
 
-Starts from a node and visits all nodes that can be visited from that node recursively. Uses a *stack* data structure when implemented iteratively.
+Starts from a node and visits all nodes that can be visited from that node recursively. Uses a `stack `data structure when implemented iteratively.
 
 > Time complexity is O(n+m)
 
@@ -50,7 +48,7 @@ Starts from a node and visits all nodes that can be visited from that node recur
 
 ### Breadth First Search
 
-Starts from a node and visits all nodes in increasing distance. So closest nodes are visited first. Can be used to measure **shortest distance** between two nodes. **This is the best way to measure shortest distance between two nodes if the graph is unweighted.**
+Starts from a node and visits all nodes in increasing distance. So closest nodes are visited first. `Queue` data structure is used to this algorithm. Can be used to measure **shortest distance** between two nodes. **This is the best way to measure shortest distance between two nodes if the graph is unweighted.**
 
 > Time complexity is `O(n+m)`
 
@@ -74,7 +72,7 @@ Checking whether a graph can be colored using only 2 colors so that no neighbori
 
 ## Shortest Paths
 
-If the graph is unweighted, best algorithm to use is Breadth First Search, which has a time complexity of `O(n+m)`. However if graph is weighted we have to use other algorithms which have worst time complexity that BFS.
+**If the graph is unweighted, best algorithm to use is Breadth First Search**, which has a time complexity of `O(n+m)`. However if graph is weighted we have to use other algorithms which have worst time complexity than BFS.
 
 ### Negative Cycles
 
@@ -94,3 +92,20 @@ This algorithms requires graph to be represented as an **edge list**. However it
 - This algorithm can detect *negative cycles* by iterating through `n` times (instead of `n-1`) and checking whether distances changed in the last iteration.
 
 > Time Complexity is `O(nm)`
+
+### Dijkstra Algorithm
+
+**Fast** algorithm to **find distances from one node to all other nodes**. **Distances MUST BE positive**. If it contains negative lengths/weights this will give a wrong answer. This algorithm uses the fact that all distances are positive to process each edge only once.
+
+![Dijkstra Algorithm](README/shortest-paths-4.gif) 
+
+- Set distance to all nodes as `INF` except for starting node. Distance to starting node in `0`.
+- Start from starting node.
+- For each edge starting from the current node, find the distance to the neighbor if corresponding edge is used. Distance can be found by, *shortest distance to current node +  weight of the edge between*. If the distance calculated in this manner is less than current shortest distance to neighboring node, update its shortest distance and add it to list of the nodes which will be processed next.
+- Then select the node with shortest distance from the list of list of nodes. Remove the node from the list after it is selected. The repeat above process for that node.
+- Do this until you have no nodes to process.
+- In this way each edge will be processed only once.
+
+This should be processed using a `priorityQueue` (or `heapq` in python) in order to efficiently get node with minimum distance each time.
+
+> Time Complexity(`PriorityQueue`) is `O(n+mlogm)`. Otherwise `O(n^2)`

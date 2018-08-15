@@ -16,6 +16,7 @@ def bfs_iter(graph: dict, start: int) -> set:
     return visited
 
 
+# Tested in https://www.hackerrank.com/challenges/the-quickest-way-up/problem
 def bfs_distance(graph: dict, start: int, target: int) -> int:
     """Returns shortest between start and target. 
     If unreachable returns INF.

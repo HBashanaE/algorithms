@@ -14,8 +14,15 @@ def is_connected(graph: dict) -> bool:
     return len(visited) == len(graph)
 
 
+# Tested in https://www.hackerrank.com/challenges/torque-and-development/problem
 def list_components(graph: dict) -> list:
-    """Lists all components in a graph using DFS"""
+    """Lists all components in a graph using DFS
+    Will not ditect isolate nodes if they were not included using empty edge set.
+    {0:set(), 1:{3,2}, 2:{3}, 3:set()} is [{0}, {1, 2, 3}]
+    but
+    {1:{3,2}, 2:{3}} is [{1, 2, 3}]
+    So add items which are not in any components to components list
+    OR always define empty edge sets as set() (Which will be inefficient in some cases)."""
 
     components = []
     visited = set()
