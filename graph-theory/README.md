@@ -1,5 +1,7 @@
 # Graph Theory
 
+[TOC]
+
 ## Graph Terminology
 
 ![Graph Theory Terminology](README/terminology-1.gif)
@@ -42,11 +44,15 @@ A graph can be traversed using several algorithms.
 
 Starts from a node and visits all nodes that can be visited from that node recursively. Uses a *stack* data structure when implemented iteratively.
 
+> Time complexity is O(n+m)
+
 ![Depth First Search](README/traversal-1.gif)
 
 ### Breadth First Search
 
-Starts from a node and visits all nodes in increasing distance. So closest nodes are visited first. Can be used to measure **shortest distance** between two nodes.
+Starts from a node and visits all nodes in increasing distance. So closest nodes are visited first. Can be used to measure **shortest distance** between two nodes. **This is the best way to measure shortest distance between two nodes if the graph is unweighted.**
+
+> Time complexity is `O(n+m)`
 
 ![Breadth First Search](README/traversal-2.gif)
 
@@ -65,3 +71,26 @@ Second algorithm uses the fact that if a graph is connected, unidirectional and 
 #### Bipartite Checking
 
 Checking whether a graph can be colored using only 2 colors so that no neighboring cell contains same color, can be implemented using DFS. Method is to start from any node and start coloring until there is no node left or it finds a neighboring node with same color.
+
+## Shortest Paths
+
+If the graph is unweighted, best algorithm to use is Breadth First Search, which has a time complexity of `O(n+m)`. However if graph is weighted we have to use other algorithms which have worst time complexity that BFS.
+
+### Negative Cycles
+
+Shortest distances are not defined if graph contains a negative cycle which means that sum of weights of the particular cycle is negative. If this is the case we can go though that cycle infinite no of times because going though it reduces our total distance. Some algorithms like *Bellman-Ford Algorithm* can detect presence  of negative cycles whereas some cannot which results in wrong answers.
+
+### Bellman-Ford Algorithm
+
+**Slow** algorithm to **find distance from one node to all other nodes**. **Distances can be negative**. **Can detect negative cycles.**
+
+This algorithms requires graph to be represented as an **edge list**. However it is easy to convert adjacency list or adjacency matrix and it has time complexity of `O(n+m)`. So Bellman-Ford Algorithm time complexity wont change.
+
+![Bellman-Ford](README/shortest-paths-1.gif)
+
+- Set distance to all nodes as `INF` except for starting node. Distance to starting node in `0`.
+- Iterate through all edges (one-directional edges, if edges are unidirectional same edge have to be processed twice in both ways) and set *distance to the second node* as *distance to first node + weight of the edge* if and only if that distance is less than already computed distance for second node.
+- Do this `n-1` times  where n is no of nodes. Algorithm can stop midway if it detects no distances were changed in a iteration.
+- This algorithm can detect *negative cycles* by iterating through `n` times (instead of `n-1`) and checking whether distances changed in the last iteration.
+
+> Time Complexity is `O(nm)`

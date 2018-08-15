@@ -1,4 +1,4 @@
-def is_bipartite(graph):
+def is_bipartite(graph: dict) -> bool:
     """Return whether can be colored using 2 colors.
     Uses DFS to color until it colors all or finds a neighbor with same color"""
 

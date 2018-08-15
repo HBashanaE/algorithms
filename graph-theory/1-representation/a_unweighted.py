@@ -40,3 +40,5 @@ edge_list_graph = {
     (5, 3),
     (5, 4),
 }
+
+nodes = 6

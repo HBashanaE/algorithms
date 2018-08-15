@@ -2,7 +2,8 @@ def dfs_recursion(graph: dict, current: int, visited: set) -> set:
     """Recursive implementation.
     Not suitable for larger graphs.
     Should provide empty visited set.
-    Returns all visited set."""
+    Returns all visited set.
+    Graph has to be passed as an adjecency list."""
 
     visited.add(current)
     for node in graph[current]:
@@ -12,7 +13,8 @@ def dfs_recursion(graph: dict, current: int, visited: set) -> set:
 
 
 def dfs_iter(graph: dict, start: int) -> set:
-    """Iterative implementation. Returns all visited set."""
+    """Iterative implementation. Returns all visited set.
+    Graph has to be passed as an adjecency list."""
 
     visited = set()
     stack = [start]

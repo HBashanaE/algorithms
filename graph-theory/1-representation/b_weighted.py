@@ -31,3 +31,4 @@ edge_list_graph = {
     (1, 3, 7),
     (2, 3, 6),
 }
+nodes = 4

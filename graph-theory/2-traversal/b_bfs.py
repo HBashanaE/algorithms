@@ -2,7 +2,8 @@ import collections
 
 
 def bfs_iter(graph: dict, start: int) -> set:
-    """Returns all visited set."""
+    """Returns all visited set.
+    Graph has to be passed as an adjecency list."""
 
     visited = set()
     queue = collections.deque([start])
@@ -17,7 +18,9 @@ def bfs_iter(graph: dict, start: int) -> set:
 
 def bfs_distance(graph: dict, start: int, target: int) -> int:
     """Returns shortest between start and target. 
-    If unreachable returns INF"""
+    If unreachable returns INF.
+    Graph need to be unweighted.
+    Graph has to be passed as an adjecency list."""
 
     visited = set()
     queue = collections.deque([(start, 0)])
