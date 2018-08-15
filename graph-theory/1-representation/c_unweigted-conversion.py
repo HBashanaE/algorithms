@@ -52,10 +52,7 @@ def adjacency_matrix_to_edge_list(adj_mat: list, nodes: int) -> set:
 def edge_list_to_adjacency_list(edge_list: set, nodes: int) -> dict:
     """Graph should have nodes as 0..n"""
 
-    adj_list = {}
-    for node in range(nodes):
-        if node not in adj_list:
-            adj_list[node] = set()
+    adj_list = {node:set() for node in range(nodes)}
     for edge in edge_list:
         a, b = edge
         adj_list[a].add(b)

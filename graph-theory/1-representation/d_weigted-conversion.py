@@ -53,14 +53,11 @@ def adjacency_matrix_to_edge_list(adj_mat: list, nodes: int) -> set:
 def edge_list_to_adjacency_list(edge_lst: set, nodes: int) -> dict:
     """Graph should have nodes as 0..n"""
 
-    adj_lst = {}
-    for node in range(nodes):
-        if node not in adj_lst:
-            adj_lst[node] = {}
+    adj_list = {node:{} for node in range(nodes)}
     for edge in edge_lst:
         a, b, w = edge
-        adj_lst[a][b] = w
-    return adj_lst
+        adj_list[a][b] = w
+    return adj_list
 
 
 def edge_list_to_adjacency_matrix(edge_lst: set, nodes: int) -> list:
@@ -69,8 +66,6 @@ def edge_list_to_adjacency_matrix(edge_lst: set, nodes: int) -> list:
     adj_mat = [[0]*nodes for _ in range(nodes)]
     for edge in edge_lst:
         a, b, w = edge
-        if b < a:
-            a, b = b, a
         adj_mat[a][b] = w
     return adj_mat
 
