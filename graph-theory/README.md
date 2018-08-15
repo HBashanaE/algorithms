@@ -48,7 +48,7 @@ Starts from a node and visits all nodes that can be visited from that node recur
 
 Starts from a node and visits all nodes in increasing distance. So closest nodes are visited first. Can be used to measure **shortest distance** between two nodes.
 
-![Breadth First Search](F:\Projects\Python\algorithms\graph-theory\README\traversal-2.gif)
+![Breadth First Search](README/traversal-2.gif)
 
 ### Usages
 
