@@ -92,31 +92,25 @@ def edge_list_to_adjacency_matrix(edge_lst: set) -> list:
 # -----------------------------------------------------------------------
 assert(
     adjacency_list_to_adjacency_matrix(b_weighted.adj_list_graph)
-    ==
-    b_weighted.adj_matrix_graph
+    == b_weighted.adj_matrix_graph
 )
 assert(
     adjacency_list_to_edge_list(b_weighted.adj_list_graph)
-    ==
-    b_weighted.edge_list_graph
+    == b_weighted.edge_list_graph
 )
 assert(
     adjacency_matrix_to_adjacency_list(b_weighted.adj_matrix_graph)
-    ==
-    b_weighted.adj_list_graph
+    == _weighted.adj_list_graph
 )
 assert(
     adjacency_matrix_to_edge_list(b_weighted.adj_matrix_graph)
-    ==
-    b_weighted.edge_list_graph
+    == b_weighted.edge_list_graph
 )
 assert(
     edge_list_to_adjacency_list(b_weighted.edge_list_graph)
-    ==
-    b_weighted.adj_list_graph
+    == b_weighted.adj_list_graph
 )
 assert(
     edge_list_to_adjacency_matrix(b_weighted.edge_list_graph)
-    ==
-    b_weighted.adj_matrix_graph
+    == b_weighted.adj_matrix_graph
 )

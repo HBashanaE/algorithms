@@ -40,13 +40,28 @@ A graph can be traversed using several algorithms.
 
 ### Depth First Search Algorithm
 
-Starts from a node and visits all nodes that can be visited from that node.
+Starts from a node and visits all nodes that can be visited from that node recursively. Uses a *stack* data structure when implemented iteratively.
 
-![Depth First Search](README/traversal-1.jpg)
+![Depth First Search](README/traversal-1.gif)
 
-Especially useful when,
+### Breadth First Search
 
-- Simply traversing the whole graph applying some algorithm to each node
-- Finding whether a graph is connected
-- Finding all nodes which can be traversed from one node
-- Search for a node
+Starts from a node and visits all nodes in increasing distance. So closest nodes are visited first. Can be used to measure **shortest distance** between two nodes.
+
+![Breadth First Search](F:\Projects\Python\algorithms\graph-theory\README\traversal-2.gif)
+
+### Usages
+
+#### Connectivity Checking
+
+Can use simple DFS to check whether a graph is connected by checking whether no of nodes discovered when started from a random node equals no of all nodes in the graph. Can also use DFS to identify graph components.
+
+#### Cycle Checking
+
+Checking whether a graph has a cycle in it can be done using DFS by basically traversing the graph while checking whether it finds a node it previously found (indicating there is a cycle).However this search needs to remember previous node since `A → B → A` is not a cycle but is possible in a unidirectional graph. So if DFS finds a node previously found but is not the node before, it means that there is a cycle.
+
+Second algorithm uses the fact that if a graph is connected, unidirectional and cycle-less it has to be a tree. Since tree contains `n-1` edges where `n` is number of nodes, Connected, unidirectional and cycle-less graphs have to have `n-1` edges. **So if a graph is connected and unidirectional it is cycle-less if and only if it has `n-1` edges.**
+
+#### Bipartite Checking
+
+Checking whether a graph can be colored using only 2 colors so that no neighboring cell contains same color, can be implemented using DFS. Method is to start from any node and start coloring until there is no node left or it finds a neighboring node with same color.
