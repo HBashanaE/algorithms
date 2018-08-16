@@ -1,6 +1,8 @@
 # Graph Theory
 
-## Graph Terminology
+## Graph Basics
+
+### Graph Terminology
 
 ![Graph Theory Terminology](README/terminology-1.gif)
 
@@ -26,7 +28,7 @@ Graph is **connected** if there is a path between any two nodes meaning that you
 
 **Simple graph** is a graph which does not have edges that start and end at the same node and does not have multiple edges between two nodes.
 
-## Graph Representation
+### Graph Representation
 
 A graph can be represented in
 
@@ -42,7 +44,7 @@ A graph can be traversed using mainly two algorithms.
 
 Starts from a node and visits all nodes that can be visited from that node recursively. Uses a `stack`data structure when implemented iteratively.
 
-> Time complexity is O(n+m)
+> Time complexity is `O(n+m)`
 
 ![Depth First Search](README/traversal-1.gif)
 
@@ -108,7 +110,8 @@ This algorithms requires graph to be represented as an **edge list**. However it
 
 This should be processed using a `priorityQueue` (or `heapq` in python) in order to efficiently get node with minimum distance each time.
 
-> Time Complexity(`PriorityQueue`) is `O(n+mlogm)`. Otherwise `O(n^2)`
+> Time Complexity(`PriorityQueue`) is `O(n+mlogm)`.
+> Otherwise `O(n^2)`
 
 ### Floyd-Warshall Algorithm
 
@@ -121,3 +124,54 @@ This should be processed using a `priorityQueue` (or `heapq` in python) in order
 - In the end grid will contain minimum distances between any two nodes
 
 > Time Complexity is `O(n^3)`
+
+## Tree Algorithms
+
+### Tree Terminology
+
+![Tree](README/tree-1.png) 
+
+A tree in an **acyclic(no cycles) and connected** graph. It has **`n` nodes and `n-1` edges**.
+
+Adding another edge creates a cycle. Removing one cycle divides graph into two components. There is an unique path between any 2 nodes.
+
+**Leaves** are nodes with degree of `1` (Just 1 neighbor). 
+
+**Diameter** of a tree is maximum length between any two nodes. In above tree diameter is `3` which can be found between *`2 and 6`* (or *`1 and 6`* or *`3 and 6`*).
+
+![Rooted Tree](README/tree-2.png) 
+
+**Rooted Tree** is a tree with a node appointed as the root. In a node of that type of tree, **children or child nodes** are nodes below and **parent node** is the node above.  For example in above tree, `2` and `4` are children of `3` and `5` is the parent. There is only one parent node for each node but there can be zero or more child nodes. Each node in a rooted tree has a subtree in which it is the root.
+
+### Tree Traversal
+
+Normal Graph Traversal algorithms can be applied to traverse a tree. However since there are no cycles, we don't have to remember nodes we visited before. 
+
+Since Tree does not have cycles, it is actually easy to implement most tree algorithms and traversing in dynamic programming. For an example counting each node's child node can be easily implemented using DFS.
+
+### Diameter
+
+![Diameter](README/tree-4.png) 
+
+Diameter is the maximum distance between any 2 nodes. This can be defines in any tree(rooted or not-rooted).
+
+#### Algorithm A
+
+Uses dynamic programming.
+
+- Assume that tree is rooted from `node 0`(or any node which belongs to the tree). Then recursively find for each `node x` the maximum distance to its leaves. Save these in a array. For example for above tree (which is rooted from `node 1`) maximum distance from `node 1 = 4`, `node 2 = 3`, `node 3 = 0` and likewise.
+- Then for each `node x`, take the sub tree which is rooted from `node x`, and find the maximum length of the path which passes through `node x` in that subtree. This can be found using maximum distances to leaves value which were found in previous step. 
+- Since diameter of the whole  has to be one of those lengths, take the maximum of those lengths as diameter.
+
+> Time Complexity is `O(n)`
+
+#### Algorithm B
+
+This is more simple that first algorithm.
+
+- Take any arbitrary `node x`.
+- Find `node y` which is furthest away from `node x` using DFS.
+- Find `node z` which is furthest away from `node y` from DFS.
+- `node y` and `node z` are the two ends of diameter path. So distance between them is diameter.
+
+> Time Complexity is `O(n)`
