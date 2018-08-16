@@ -1,7 +1,6 @@
 """
 Converting from one graph representation to another.
 """
-import a_unweighted
 
 
 def adjacency_list_to_adjacency_matrix(adj_list: dict, nodes: int) -> list:
@@ -15,7 +14,7 @@ def adjacency_list_to_adjacency_matrix(adj_list: dict, nodes: int) -> list:
     return adj_mat
 
 
-def adjacency_list_to_edge_list(adj_list: dict, nodes: int) -> set:
+def adjacency_list_to_edge_list(adj_list: dict) -> set:
     """Edge List Items will be sorted so node with smaller index will appear first"""
 
     edge_list = set()

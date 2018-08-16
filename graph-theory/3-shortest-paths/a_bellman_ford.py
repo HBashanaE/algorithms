@@ -7,7 +7,9 @@ def bellman_ford(graph: set, nodes: int, start: int) -> list:
 
     shortest_distances = [float("inf")]*nodes
     shortest_distances[start] = 0
-    for i in range(nodes):
+    changed = False
+    processed_nodes = 0
+    for processed_nodes in range(nodes):
         changed = False
         for edge in graph:
             a, b, w = edge
@@ -17,7 +19,7 @@ def bellman_ford(graph: set, nodes: int, start: int) -> list:
                 shortest_distances[b] = b_distance
         if not changed:
             break
-    if i == nodes-1 and changed:
+    if processed_nodes == nodes-1 and changed:
         # Negative cycle
         raise TypeError()
     else:

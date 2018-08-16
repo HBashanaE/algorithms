@@ -3,7 +3,7 @@ def dfs_recursion(graph: dict, current: int, visited: set) -> set:
     Not suitable for larger graphs.
     Should provide empty visited set.
     Returns all visited set.
-    Graph has to be passed as an adjecency list."""
+    Graph has to be passed as an adjacency list."""
 
     visited.add(current)
     for node in graph[current]:

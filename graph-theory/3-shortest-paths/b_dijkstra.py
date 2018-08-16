@@ -47,10 +47,10 @@ def dijkstra_heapq(graph:  dict, nodes: int, start: int) -> list:
     Graph has to be passed as an adjacency list.
     Nodes has to be indexed 0..n.
 
-    Time Complexity: O(n + mlogm)"""
+    Time Complexity: O(n + m*log(m))"""
 
     # Same as above but uses heapq so that
-    # adding and retrieves is O(logn) instead of O(n)
+    # adding and retrieves is O(log(n)) instead of O(n)
     shortest_distances = [float("inf")]*nodes
     shortest_distances[start] = 0
     # Used list but can use set without changing time complexity

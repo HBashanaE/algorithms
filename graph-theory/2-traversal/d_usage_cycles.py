@@ -3,7 +3,7 @@ def contains_cycle(graph: dict) -> bool:
 
     visited = set()
     # Here we need to store both current node and the node before that
-    # Because in a unidirected graph A->B->A is also possible but is not a cycle
+    # Because in a undirected graph A->B->A is also possible but is not a cycle
     stack = [(next(iter(graph.keys())), None)]
     while stack:
         node, prev = stack.pop()
@@ -21,7 +21,7 @@ def contains_cycle(graph: dict) -> bool:
 def contains_cycle_specific(graph: dict, nodes: int) -> bool:
     """Returns True is graph contains a cycle.
     Uses the idea that if there isn't a cycle in a connected graph, it is a tree.
-    Tree is a connected, undirected, cycleless graph.
+    Tree is a connected, undirected, cycle-less graph.
     No of edges in a tree is n-1 where n is no of nodes
     So no of edges != n - 1 to have a cycle."""
 

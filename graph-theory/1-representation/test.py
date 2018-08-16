@@ -16,7 +16,7 @@ class TestUnweightedConversion(unittest.TestCase):
     def test_adjacency_list_to_edge_list(self):
         self.assertEqual(
             c_unweigted_conversion.adjacency_list_to_edge_list(
-                a_unweighted.adj_list_graph, a_unweighted.nodes),
+                a_unweighted.adj_list_graph),
             a_unweighted.edge_list_graph
         )
 

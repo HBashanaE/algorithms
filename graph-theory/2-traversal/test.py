@@ -32,6 +32,7 @@ graph_c = {
 }
 nodes_c = 6
 
+
 class TestDFS(unittest.TestCase):
     def test_dfs_recursion(self):
         self.assertEqual(

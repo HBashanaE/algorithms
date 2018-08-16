@@ -17,7 +17,7 @@ def is_connected(graph: dict) -> bool:
 # Tested in https://www.hackerrank.com/challenges/torque-and-development/problem
 def list_components(graph: dict) -> list:
     """Lists all components in a graph using DFS
-    Will not ditect isolate nodes if they were not included using empty edge set.
+    Will not detect isolate nodes if they were not included using empty edge set.
     {0:set(), 1:{3,2}, 2:{3}, 3:set()} is [{0}, {1, 2, 3}]
     but
     {1:{3,2}, 2:{3}} is [{1, 2, 3}]

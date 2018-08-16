@@ -1,13 +1,12 @@
 """
 Converting from one graph representation to another.
 """
-import b_weighted
 
 
 def adjacency_list_to_adjacency_matrix(adj_list: dict, nodes: int) -> list:
     """Graph should have nodes as 0..n"""
 
-    adj_mat = [[0]*nodes for _ in range(nodes)]
+    adj_mat = [[0] * nodes for _ in range(nodes)]
     for node in adj_list:
         for neighbor in adj_list[node]:
             adj_mat[node][neighbor] = adj_list[node][neighbor]
@@ -62,7 +61,7 @@ def edge_list_to_adjacency_list(edge_lst: set, nodes: int) -> dict:
 def edge_list_to_adjacency_matrix(edge_lst: set, nodes: int) -> list:
     """Graph should have nodes as 0..n"""
 
-    adj_mat = [[0]*nodes for _ in range(nodes)]
+    adj_mat = [[0] * nodes for _ in range(nodes)]
     for edge in edge_lst:
         a, b, w = edge
         adj_mat[a][b] = w
