@@ -51,13 +51,6 @@ class TestDiameter(unittest.TestCase):
                 5
             )
 
-    def test_diameter_dp_iter(self):
-        for start in range(10):
-            self.assertEqual(
-                b_diameter.diameter_dp_iter(tree, nodes, start),
-                5
-            )
-
     def test_diameter(self):
         for start in range(10):
             self.assertEqual(

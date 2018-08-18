@@ -10,7 +10,7 @@ Depth First Search implementation using recursion and iteration. Depth First Sea
 
 ## Diameter
 
-Finding diameter of a tree using Algorithm A and algorithm B. Algorithm A in implemented both recursively and iteratively. Algorithm B is implemented iteratively. Tested on above tree.
+Finding diameter of a tree using Algorithm A and algorithm B. Algorithm A in implemented recursively. Algorithm B is implemented iteratively. Tested on above tree.
 
 **File: `b_diameter.py`**
 
