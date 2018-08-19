@@ -1,7 +1,3 @@
----
-typora-copy-images-to: README
----
-
 # Graph Theory
 
 ## Graph Basics
