@@ -1,6 +1,8 @@
 import unittest
+
 import a_tree_traversal
 import b_diameter
+import c_longest_paths
 
 tree = {
     0: {1, 2},
@@ -38,7 +40,7 @@ class TestTreeTraversal(unittest.TestCase):
 
     def test_count_sub_tree_node(self):
         self.assertListEqual(
-            a_tree_traversal.count_nodes(tree, 0, -1, [0]*nodes),
+            a_tree_traversal.count_nodes(tree, 0, -1, [0] * nodes),
             [10, 7, 2, 2, 3, 1, 1, 1, 1, 1]
         )
 
@@ -57,6 +59,14 @@ class TestDiameter(unittest.TestCase):
                 b_diameter.diameter(tree, start),
                 5
             )
+
+
+class TestAllLongestPaths(unittest.TestCase):
+    def test_all_longest_paths(self):
+        self.assertListEqual(
+            c_longest_paths.all_longest_paths(tree, nodes, 0),
+            [3, 3, 4, 4, 4, 4, 5, 5, 5, 5]
+        )
 
 
 if __name__ == '__main__':

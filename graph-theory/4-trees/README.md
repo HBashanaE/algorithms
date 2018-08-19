@@ -14,3 +14,9 @@ Finding diameter of a tree using Algorithm A and algorithm B. Algorithm A in imp
 
 **File: `b_diameter.py`**
 
+## All Longest Paths
+
+All longest paths starting from each node. Algorithm A in implemented recursively. Trivial to convert to iterative function. Tested on above tree.
+
+**File: `c_longest_paths.py`**
+

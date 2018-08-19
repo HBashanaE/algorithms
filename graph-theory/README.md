@@ -175,3 +175,16 @@ This is more simple that first algorithm.
 - `node y` and `node z` are the two ends of diameter path. So distance between them is diameter.
 
 > Time Complexity is `O(n)`
+
+### All Longest Paths
+
+This is similar to a generalization of dynamic programming method for finding the diameter in a tree.
+
+- First find the maximum length and second maximum length starting from each node and going through its children. Use dynamic programming as in,
+  - *maximum distance through children* = maximum of each child's *maximum distance* + 1.
+- Then find maximum distance starting from each node and going through its parent. Use dynamic programming as in *maximum length from a node through its parent* is either,
+  - Maximum distance from the parent node + 1
+  - Second maximum distance from the parent node + 1 (If first maximum length path goes through the node in question)
+- Then take maximum of above distance through parent node and distance through child nodes as the maximum distance of the particular node
+
+> Time Complexity is `O(n)`
