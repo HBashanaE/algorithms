@@ -3,6 +3,7 @@ import unittest
 import a_tree_traversal
 import b_diameter
 import c_longest_paths
+import d_binary_tree
 
 tree = {
     0: {1, 2},
@@ -66,6 +67,38 @@ class TestAllLongestPaths(unittest.TestCase):
         self.assertListEqual(
             c_longest_paths.all_longest_paths(tree, nodes, 0),
             [3, 3, 4, 4, 4, 4, 5, 5, 5, 5]
+        )
+
+
+class TestBinaryTree(unittest.TestCase):
+    def setUp(self):
+        binary_tree = d_binary_tree.Node(2)
+        binary_tree.right = d_binary_tree.Node(5)
+        binary_tree.right.right = d_binary_tree.Node(9)
+        binary_tree.right.right.left = d_binary_tree.Node(4)
+        binary_tree.left = d_binary_tree.Node(7)
+        binary_tree.left.right = d_binary_tree.Node(6)
+        binary_tree.left.right.right = d_binary_tree.Node(11)
+        binary_tree.left.right.left = d_binary_tree.Node(5)
+        binary_tree.left.left = d_binary_tree.Node(2)
+        self.binary_tree = binary_tree
+
+    def test_pre_order(self):
+        self.assertListEqual(
+            d_binary_tree.pre_order(self.binary_tree),
+            [2, 7, 2, 6, 5, 11, 5, 9, 4]
+        )
+
+    def test_in_order(self):
+        self.assertListEqual(
+            d_binary_tree.in_order(self.binary_tree),
+            [2, 7, 5, 6, 11, 2, 5, 4, 9]
+        )
+
+    def test_post_order(self):
+        self.assertListEqual(
+            d_binary_tree.post_order(self.binary_tree),
+            [2, 5, 11, 6, 7, 4, 9, 5, 2]
         )
 
 

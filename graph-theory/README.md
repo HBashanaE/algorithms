@@ -1,3 +1,7 @@
+---
+typora-copy-images-to: README
+---
+
 # Graph Theory
 
 ## Graph Basics
@@ -188,3 +192,17 @@ This is similar to a generalization of dynamic programming method for finding th
 - Then take maximum of above distance through parent node and distance through child nodes as the maximum distance of the particular node
 
 > Time Complexity is `O(n)`
+
+### Binary Trees
+
+![Binary Tree](README/tree-5.png)
+
+Binary Trees are rooted trees in which each node has at most two children. There are three orderings/traversing of a binary tree.
+
+- **Pre Order :** First root, then left subtree, then right subtree.
+  - In above tree `[2, 7, 2, 6, 5, 11, 5, 9, 4]`
+- **In Order :** First left subtree, then root, then right subtree.
+  - In above tree `[2, 7, 5, 6, 11, 2, 5, 4, 9]`
+- **Post Order :** First left subtree, then right subtree, then root.
+  - In above tree `[2, 5, 11, 6, 7, 4, 9, 5, 2]`
+
