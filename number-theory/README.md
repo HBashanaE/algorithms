@@ -16,11 +16,15 @@ A number `a` is called a **factor** or a **divisor** of a number `b` if `a` divi
 
 ![equation](README/primes-1.jpg)
 
+------
+
 **Number of factors**  of `n` is,
 
 ![Equation](README/primes-2.jpg)
 
 because for each prime there are `(a+1)` choices for their powers including `0`.
+
+------
 
 **Sum of factors** of `n` is,
 
@@ -28,24 +32,36 @@ because for each prime there are `(a+1)` choices for their powers including `0`.
 
 where the latter equation is based off geometric progression formula.
 
+------
+
 **Product of factors** of `n` is,
 
 ![Equation](README/primes-4.jpg)
 
 because we can form `number of factors/2` pairs from the factors, each with product `n`.
 
+------
+
 **Perfect number** is a number in which sum of factors below the number is equal to the number itself.
 
 ![Equation](README/primes-5.jpg)
+
+------
+
 ### Number of Primes
 
 There infinite number of primes.
+
+------
 
 ### Density of Primes
 
 The density of primes means how often there are primes among the numbers.  If `pi(n)` denotes number of primes between `1` and `n` then,
 
 ![Equation](README/primes-6.jpg)
+
+------
+
 ### Conjectures
 
 - **Goldbach’s conjecture**
@@ -58,15 +74,19 @@ The density of primes means how often there are primes among the numbers.  If `p
 - **Twin prime conjecture**
   - There is an infinite number of pairs of the form `{p, p+2}`, where both `p` and `p+2` are primes.
 - **Legendre’s conjecture**
-  - There is always a prime between numbers `n^2` and `(n+1)^2`, where n is any positive integer. 
+  - There is always a prime between numbers `n^2` and `(n+1)^2`, where n is any positive integer.
+
+------
 
 ### Basic Algorithms
 
 #### Prime Checking
 
-If a number `n` is not prime, it can be represented as a product `a*b`, where `a<=sqrt(n)` or `b<=sqrt(n)`, so it certainly has a factor between `2` and `sqrt(n)`. 
+If a number `n` is not prime, it can be represented as a product `a*b`, where `a<=sqrt(n)` or `b<=sqrt(n)`, so it certainly has a factor between `2` and `sqrt(n)`.
 
 > Time Complexity : `O(sqrt(n))`
+
+------
 
 #### Prime Factorization
 
@@ -74,11 +94,15 @@ Prime factorization can be done following the same procedure above.
 
 > Time Complexity : `O(sqrt(n))`
 
+------
+
 #### Sieve of Eratosthenes
 
 The sieve of Eratosthenes is a preprocessing algorithm that builds an array using which we can efficiently check if a given number between 2...n is prime and, if it is not, find one prime factor of the number.  
 
 > Time Complexity : `O(n log(log(n))`
+
+------
 
 #### Euclid’s algorithm
 
@@ -91,9 +115,13 @@ The greatest common divisor of numbers `a` and `b`, `gcd(a,b)`, is the greatest 
 ![Equation](README/primes-8.jpg)
 > Time Complexity : `O(log(n)) where n=min(a,b)`
 
+------
+
 #### Euler’s totient function
 
-**Numbers `a` and `b` are coprime if `gcd(a,b)=1`.** Euler’s totient function `phi(n)` gives the number of coprime numbers to n between `1` and `n`. 
+**Numbers `a` and `b` are coprime if `gcd(a,b)=1`.** Euler’s totient function `phi(n)` gives the number of coprime numbers to n between `1` and `n`.
 
 ![Equation](README/primes-9.jpg)
 > Time Complexity : `O(sqrt(n))`
+
+------
