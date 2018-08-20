@@ -36,17 +36,17 @@ if abs(a-b)<=epsilon:
 
 Each sum of the form
 
-![equation](http://www.sciweavers.org/tex2img.php?eq=%5Csum_%7Bx%3D1%7D%5E%7Bn%7D1%5Ek%2B2%5Ek%2B3%5Ek%2B...%2Bn%5Ek&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=)
+![equation](README/mathematics-1.jpg)
 
 where k is a positive integer, **has a closed-form formula that is a polynomial of degree k +1**. See [Faulhaber’s formula](https://en.wikipedia.org/wiki/Faulhaber%27s_formula).
 
 ### Arithmetic Progression
 
-![equation](http://www.sciweavers.org/tex2img.php?eq=a%2B%28a%2Bd%29%2B%28a%2B2d%29%2B+...%2B%28a%2B%28n-1%29d%29+%3D+%5Cfrac%7Bn%7D%7B2%7D+%282a%2B%28n-1%29d%29&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=)
+![equation](README/mathematics-2.jpg)
 
 ### Geometric Progression
 
-![equation](http://www.sciweavers.org/tex2img.php?eq=a%2Bar%2Bar%5E2%2B...%2Bar%5E%7Bn-1%7D+%3D+%5Cfrac%7Ba%28r%5En-1%29%7D%7B%28r-1%29%7D&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=)
+![equation](README/mathematics-3.jpg)
 
 ### Sets
 
@@ -54,17 +54,17 @@ A set with `n` elements has `2^n` elements including empty set.
 
 ### Fibonacci Numbers
 
-![equation](http://www.sciweavers.org/tex2img.php?eq=f%28n%29+%3D+%0D%0A+++++%5Cbegin%7Bcases%7D%0D%0A+++++++1+%26%5Cquad+n%3D1%5C%5C%0D%0A+++++++1+%26%5Cquad+n%3D2%5C%5C%0D%0A+++++++f%28n-1%29+%2B+f%28n-2%29+%26%5Cquad%5Ctext%7Botherwise.%7D+%5C%5C+%0D%0A+++++%5Cend%7Bcases%7D&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=)
+![equation](README/mathematics-4.jpg)
 
 There is a closed form formula to calculate nth Fibonacci number, called **Binet's Formula**.
 
-![equation](http://www.sciweavers.org/tex2img.php?eq=f%28n%29+%3D+%0D%0A%5Cfrac%0D%0A%7B%281%2B%5Csqrt5%29%5En-%281-%5Csqrt5%29%5En%7D%0D%0A%7B2%5En%5Csqrt5%7D&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=)
+![equation](README/mathematics-5.jpg)
 
 ### Logarithm
 
 Useful property of logarithm is that,
 
-![equation](http://www.sciweavers.org/tex2img.php?eq=%5Clog_kx+%3D+%5Ctext%7Btimes+we+have+to+divide+x+by+k+before+reaching+1%7D%5C%5C%0D%0A%5Clfloor%7B%5Clog_k%28x%29%2B1%7D+%5Crfloor+%3D+%5Ctext%7Bno+of+digits+in+x+when+written+in+base+k%7D&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=)
+![equation](README/mathematics-6.jpg)
 
 ## Time Complexity
 
