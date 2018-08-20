@@ -9,7 +9,7 @@ Number theory is a branch of mathematics that studies integers.
 ```markdown
 # Inserting Equations for this page
 
-![Equation](http://www.sciweavers.org/tex2img.php?eq=ENCODEDEQUATIONHERE&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=)
+![Equation](http://www.sciweavers.org/tex2img.php?eq=ENCODEDEQUATIONHERE&bc=White&fc=Black&im=jpg&fs=12&ff=modern&edit=)
 ```
 
 [Encode Equation](https://www.url-encode-decode.com)
