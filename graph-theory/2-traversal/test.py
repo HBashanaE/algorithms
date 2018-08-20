@@ -1,4 +1,5 @@
 import unittest
+
 import a_dfs
 import b_bfs
 import c_usage_connectivity
@@ -35,71 +36,42 @@ nodes_c = 6
 
 class TestDFS(unittest.TestCase):
     def test_dfs_recursion(self):
-        self.assertEqual(
-            a_dfs.dfs_recursion(graph_a, 0, set()),
-            {0, 1, 2, 3, 4}
-        )
+        self.assertEqual(a_dfs.dfs_recursion(graph_a, 0, set()), {0, 1, 2, 3, 4})
 
     def test_dfs_iter(self):
-        self.assertEqual(
-            a_dfs.dfs_iter(graph_a, 0),
-            {0, 1, 2, 3, 4}
-        )
+        self.assertEqual(a_dfs.dfs_iter(graph_a, 0), {0, 1, 2, 3, 4})
 
 
 class TestBFS(unittest.TestCase):
     def test_bfs_iter(self):
-        self.assertEqual(
-            b_bfs.bfs_iter(graph_a, 0),
-            {0, 1, 2, 3, 4}
-        )
+        self.assertEqual(b_bfs.bfs_iter(graph_a, 0), {0, 1, 2, 3, 4})
 
     def test_bfs_distance(self):
-        self.assertEqual(
-            b_bfs.bfs_distance(graph_a, 0, 3),
-            2
-        )
+        self.assertEqual(b_bfs.bfs_distance(graph_a, 0, 3), 2)
 
 
 class TestConnectivity(unittest.TestCase):
     def test_is_connected(self):
-        self.assertFalse(
-            c_usage_connectivity.is_connected(graph_a)
-        )
+        self.assertFalse(c_usage_connectivity.is_connected(graph_a))
 
     def test_list_components(self):
-        self.assertListEqual(
-            c_usage_connectivity.list_components(graph_a),
-            [{0, 1, 2, 3, 4}, {5}]
-        )
+        self.assertListEqual(c_usage_connectivity.list_components(graph_a), [{0, 1, 2, 3, 4}, {5}])
 
 
 class TestCycle(unittest.TestCase):
     def test_contains_cycle(self):
-        self.assertTrue(
-            d_usage_cycles.contains_cycle(graph_b)
-        )
-        self.assertFalse(
-            d_usage_cycles.contains_cycle(graph_c)
-        )
+        self.assertTrue(d_usage_cycles.contains_cycle(graph_b))
+        self.assertFalse(d_usage_cycles.contains_cycle(graph_c))
 
     def test_contains_cycle_specific(self):
-        self.assertTrue(
-            d_usage_cycles.contains_cycle_specific(graph_b, nodes_b)
-        )
-        self.assertFalse(
-            d_usage_cycles.contains_cycle_specific(graph_c, nodes_c)
-        )
+        self.assertTrue(d_usage_cycles.contains_cycle_specific(graph_b, nodes_b))
+        self.assertFalse(d_usage_cycles.contains_cycle_specific(graph_c, nodes_c))
 
 
 class TestBipartite(unittest.TestCase):
     def test_is_bipartite(self):
-        self.assertFalse(
-            e_usage_coloring.is_bipartite(graph_b)
-        )
-        self.assertTrue(
-            e_usage_coloring.is_bipartite(graph_c)
-        )
+        self.assertFalse(e_usage_coloring.is_bipartite(graph_b))
+        self.assertTrue(e_usage_coloring.is_bipartite(graph_c))
 
 
 if __name__ == '__main__':
