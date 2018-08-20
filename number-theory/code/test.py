@@ -38,8 +38,6 @@ class TestPrime(unittest.TestCase):
         self.assertListEqual(construct_prime_factors(6, sieve), [2, 3])
         self.assertListEqual(construct_prime_factors(100, sieve), [2, 2, 5, 5])
 
-
-class TestEuclid(unittest.TestCase):
     def test_euclid_gcd(self):
         self.assertEqual(euclid_gcd(1, 1), 1)
         self.assertEqual(euclid_gcd(1, 2), 1)
@@ -53,6 +51,13 @@ class TestEuclid(unittest.TestCase):
         self.assertEqual(lcm(100, 100), 100)
         self.assertEqual(lcm(4400, 264), 13200)
         self.assertEqual(lcm(573147844013817084101, 927372692193078999176), 531521659127752446580404735205751701700776)
+
+    def test_count_co_primes(self):
+        self.assertEqual(count_co_primes(1), 0)
+        self.assertEqual(count_co_primes(12), 4)
+        self.assertEqual(count_co_primes(100), 40)
+        self.assertEqual(count_co_primes(1000000007), 1000000006)
+        self.assertEqual(count_co_primes(57314784401), 49049098560)
 
 
 if __name__ == '__main__':

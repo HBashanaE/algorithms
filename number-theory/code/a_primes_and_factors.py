@@ -87,3 +87,24 @@ def lcm(a, b):
     gcd = euclid_gcd(a, b)
     _lcm = (a * b) // gcd
     return _lcm
+
+
+def count_co_primes(number: int) -> int:
+    """Gets all co primes i of number such as 1<=i<=number
+    Time Complexity: O(sqrt(n))"""
+
+    if number == 1:
+        return 0
+    co_primes = 1
+    p_i = 2
+    while p_i * p_i <= number:
+        a_i = 0
+        while number % p_i == 0:
+            a_i += 1
+            number //= p_i
+        if a_i > 0:
+            co_primes *= pow(p_i, a_i - 1) * (p_i - 1)
+        p_i += 1
+    if number > 1:
+        co_primes *= (number - 1)
+    return co_primes

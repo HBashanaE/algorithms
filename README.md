@@ -9,3 +9,16 @@
 Basic algorithms of graph theory.
 
 - Graph Representation
+- Graph Traversal
+- Shortest Paths
+- Trees
+
+## Number Theory
+
+![Number Theory](number-theory/README/number-theory-1.png)
+
+> Number theory, is a branch of pure mathematics devoted primarily to the study of the integers. 
+
+Basic algorithms of number theory.
+
+- Primes and Factors
