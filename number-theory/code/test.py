@@ -65,6 +65,7 @@ class TestModularArithmetic(unittest.TestCase):
     def test_modular_exponentiation(self):
         self.assertEqual(modular_exponentiation(0, 6, 1), 0)
         self.assertEqual(modular_exponentiation(1, 22, 30), 1)
+        self.assertEqual(modular_exponentiation(2, 0, 30), 1)
         self.assertEqual(modular_exponentiation(2, 4, 30), 16)
         self.assertEqual(modular_exponentiation(4, 1000, 1000000009), pow(4, 1000, 1000000009))
         self.assertEqual(modular_exponentiation(11, 1689, 1000000009), pow(11, 1689, 1000000009))

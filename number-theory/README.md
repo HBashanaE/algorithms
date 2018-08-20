@@ -103,6 +103,7 @@ The greatest common divisor of numbers `a` and `b`, `gcd(a,b)`, is the greatest 
 **Euclid’s algorithm** provides an efficient way to find the greatest common divisor of two numbers. The algorithm is based on the following formula:
 
 ![Equation](README/primes-8.jpg)
+
 > Time Complexity : `O(log(n)) where n=min(a,b)`
 
 ### Euler’s totient function
@@ -110,6 +111,7 @@ The greatest common divisor of numbers `a` and `b`, `gcd(a,b)`, is the greatest 
 **Numbers `a` and `b` are coprime if `gcd(a,b)=1`.** Euler’s totient function `phi(n)` gives the number of coprime numbers to n between `1` and `n`.
 
 ![Equation](README/primes-9.jpg)
+
 > Time Complexity : `O(sqrt(n))`
 
 ## Modular arithmetic
