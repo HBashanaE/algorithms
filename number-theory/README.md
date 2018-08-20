@@ -18,7 +18,7 @@ Number theory is a branch of mathematics that studies integers.
 
 A number `a` is called a **factor** or a **divisor** of a number `b` if `a` divides `b`.  This is denoted by `a|b`. A number `n>1` is a **prime** if its only positive factors are 1 and `n`.  For every number `n>1`, there is a unique **prime factorization**.
 
-![equation](README/primes-1.jpg)
+![Equation](F:\Projects\Python\algorithms\number-theory\README\primes-1.jpg)
 
 ### Number of Factors
 
@@ -130,4 +130,3 @@ In modular arithmetic, the set of numbers is limited so that only numbers 0,1,2,
 Above function gives fast exponentiation that multiplying.
 
 > Time Complexity : `O(log(n))`
-
