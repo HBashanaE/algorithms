@@ -1,6 +1,7 @@
 import unittest
 
 from a_primes_and_factors import *
+from b_modular_arithmetic import *
 
 
 class TestPrime(unittest.TestCase):
@@ -58,6 +59,15 @@ class TestPrime(unittest.TestCase):
         self.assertEqual(count_co_primes(100), 40)
         self.assertEqual(count_co_primes(1000000007), 1000000006)
         self.assertEqual(count_co_primes(57314784401), 49049098560)
+
+
+class TestModularArithmetic(unittest.TestCase):
+    def test_modular_exponentiation(self):
+        self.assertEqual(modular_exponentiation(0, 6, 1), 0)
+        self.assertEqual(modular_exponentiation(1, 22, 30), 1)
+        self.assertEqual(modular_exponentiation(2, 4, 30), 16)
+        self.assertEqual(modular_exponentiation(4, 1000, 1000000009), pow(4, 1000, 1000000009))
+        self.assertEqual(modular_exponentiation(11, 1689, 1000000009), pow(11, 1689, 1000000009))
 
 
 if __name__ == '__main__':
