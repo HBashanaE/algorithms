@@ -12,13 +12,17 @@ Number theory is a branch of mathematics that studies integers.
 
 ## Primes and Factors
 
+### Basics
+
 A number `a` is called a **factor** or a **divisor** of a number `b` if `a` divides `b`.  This is denoted by `a|b`. A number `n>1` is a **prime** if its only positive factors are 1 and `n`.  For every number `n>1`, there is a unique **prime factorization**.
 
 ![equation](README/primes-1.jpg)
 
 ------
 
-**Number of factors**  of `n` is,
+#### Number of Factors
+
+Number of factors  of `n` is,
 
 ![Equation](README/primes-2.jpg)
 
@@ -26,7 +30,9 @@ because for each prime there are `(a+1)` choices for their powers including `0`.
 
 ------
 
-**Sum of factors** of `n` is,
+#### Sum of Factors
+
+Sum of factors of `n` is,
 
 ![Equation](README/primes-3.jpg)
 
@@ -34,7 +40,9 @@ where the latter equation is based off geometric progression formula.
 
 ------
 
-**Product of factors** of `n` is,
+#### Product of Factors
+
+Product of factors of `n` is,
 
 ![Equation](README/primes-4.jpg)
 
@@ -42,19 +50,21 @@ because we can form `number of factors/2` pairs from the factors, each with prod
 
 ------
 
-**Perfect number** is a number in which sum of factors below the number is equal to the number itself.
+#### Perfect Numbers
+
+Perfect number is a number in which sum of factors below the number is equal to the number itself.
 
 ![Equation](README/primes-5.jpg)
 
 ------
 
-### Number of Primes
+#### Number of Primes
 
 There infinite number of primes.
 
 ------
 
-### Density of Primes
+#### Density of Primes
 
 The density of primes means how often there are primes among the numbers.  If `pi(n)` denotes number of primes between `1` and `n` then,
 
@@ -64,17 +74,19 @@ The density of primes means how often there are primes among the numbers.  If `p
 
 ### Conjectures
 
-- **Goldbach’s conjecture**
-  - Any even number larger than 2 can be expressed as sum of 2 prime numbers.
-    - `p + q = e`
-  - Every odd number greater than 5 can be expressed as sum of three primes.
-    - `p + q + r = o`
-  - Every odd number greater than 5 can be expressed as the sum of prime and twice a prime.
-    - `p + 2q = o`
-- **Twin prime conjecture**
-  - There is an infinite number of pairs of the form `{p, p+2}`, where both `p` and `p+2` are primes.
-- **Legendre’s conjecture**
-  - There is always a prime between numbers `n^2` and `(n+1)^2`, where n is any positive integer.
+#### Goldbach’s Conjecture
+
+Any even number larger than 2 can be expressed as sum of 2 prime numbers.`p + q = e`
+very odd number greater than 5 can be expressed as sum of three primes.`p + q + r = o`
+Every odd number greater than 5 can be expressed as the sum of prime and twice a prime.`p + 2q = o`
+
+#### Twin Prime Conjecture
+
+There is an infinite number of pairs of the form `{p, p+2}`, where both `p` and `p+2` are primes.
+
+#### Legendre’s Conjecture
+
+There is always a prime between numbers `n^2` and `(n+1)^2`, where n is any positive integer.
 
 ------
 
@@ -123,5 +135,3 @@ The greatest common divisor of numbers `a` and `b`, `gcd(a,b)`, is the greatest 
 
 ![Equation](README/primes-9.jpg)
 > Time Complexity : `O(sqrt(n))`
-
-------
