@@ -1,7 +1,5 @@
 [TOC]
 
-
-
 # Number Theory
 
 Number theory is a branch of mathematics that studies integers.  
@@ -39,9 +37,9 @@ where the latter equation is based off geometric progression formula.
 ### Product of Factors
 
 Product of factors of `n` is,
-
-![Equation](README/primes-4.jpg)
-
+$$
+\mu(n)=n^{\frac{\tau(n)}{2}}=n^{\frac{number\ of\ factors}{2}}
+$$
 because we can form `number of factors/2` pairs from the factors, each with product `n`.
 
 ### Perfect Numbers
@@ -108,7 +106,7 @@ The greatest common divisor of numbers `a` and `b`, `gcd(a,b)`, is the greatest 
 
 ### Euler’s totient function
 
-**Numbers `a` and `b` are coprime if `gcd(a,b)=1`.** Euler’s totient function `phi(n)` gives the number of coprime numbers to n between `1` and `n`.
+**Numbers `a` and `b` are coprime if `gcd(a,b)=1`.** Euler’s totient function `phi(n)` gives the number of coprime numbers to n between `1` and `n`. When `n` is prime `phi(n)=n-1`
 
 ![Equation](README/primes-9.jpg)
 
@@ -132,3 +130,20 @@ In modular arithmetic, the set of numbers is limited so that only numbers 0,1,2,
 Above function gives fast exponentiation that multiplying.
 
 > Time Complexity : `O(log(n))`
+
+### Euler's Theorem
+
+$$
+x^{\phi(m)}\mod{m} = 1 \text{ when x and m are coprime}
+$$
+
+### Fermat's Theorem
+
+Since when `m` is prime, `phi(m)=m-1`,
+$$
+x^{m-1}\mod{m} = 1 \text{ when m is prime and x and m are coprime}
+$$
+This also yields,
+$$
+x^k\mod{m} = x^{k\mod{(m-1)}}\mod{m}
+$$
