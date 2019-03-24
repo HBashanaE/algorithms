@@ -8,11 +8,11 @@ def floyd_warshall(graph: dict, nodes: int):
             distances[a][b] = graph[a][b]
 
     # Take each node as intermediate node
-    for intermediate_node in graph:
+    for intermediate_node in range(nodes):
         # Take each node as node A
-        for node_a in graph:
+        for node_a in range(nodes):
             # Take each node as node B
-            for node_b in graph:
+            for node_b in range(nodes):
                 # If distance from [node A -> intermediate node -> node B]
                 # is greater than [node A -> node B] save that distance
                 new_distance = distances[node_a][intermediate_node] + \
