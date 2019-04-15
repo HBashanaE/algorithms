@@ -2,6 +2,7 @@ import math
 
 def modular_exponentiation(num, power, mod):
     """Returns a**b mod m faster
+    However pow(num, power, mod) is faster
     Time Complexity : O(log n)"""
 
     res = 1
