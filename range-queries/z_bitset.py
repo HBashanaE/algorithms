@@ -1,3 +1,14 @@
+""" 
+When Memory is the issue - However timeout is an issue
+Sieve creation for 100000 elements (Olglgn)
+
+              |      TIME                  |       MEM
+bitset sieve: |  1.048710823059082s        |           13 360 B = 13KB
+list sieve:   |  0.06738710403442383s      |          800 072 B = 800KB
+set sieve:    |  0.09641146659851074s      |        4 194 528 B = 4MB
+"""
+
+
 def bitset():
     return 0
 
@@ -47,7 +58,8 @@ if __name__ == "__main__":
                 sieve = bitset_add(sieve, i)
     bs_b = time.time()
 
-    print("bitset sieve: {}s \t|\t {}B".format(bs_b - bs_a, sys.getsizeof(sieve)))
+    print("bitset sieve: {}s \t|\t {}B".format(
+        bs_b - bs_a, sys.getsizeof(sieve)))
     # print(no_primes)
     # -------------------------------------------------
 
@@ -63,8 +75,9 @@ if __name__ == "__main__":
                 sieve_lst[i] = 1
     l_b = time.time()
 
-    print("list sieve: {}s \t|\t {}B".format(l_b - l_a, sys.getsizeof(sieve_lst)))
-        
+    print("list sieve: {}s \t|\t {}B".format(
+        l_b - l_a, sys.getsizeof(sieve_lst)))
+
     # --------------------------------------------------
 
     s_a = time.time()
@@ -79,7 +92,8 @@ if __name__ == "__main__":
                 sieve_set.add(i)
     s_b = time.time()
 
-    print("set sieve: {}s \t|\t {}B".format(s_b - s_a, sys.getsizeof(sieve_set)))
+    print("set sieve: {}s \t|\t {}B".format(
+        s_b - s_a, sys.getsizeof(sieve_set)))
 
     # --------------------------------------------------------------
 
