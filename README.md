@@ -1,24 +1,15 @@
 # Algorithms
 
-## Graph Theory
+## Basic Concepts
 
-![Graph Theory](graph-theory/README/graph-theory-1.png)
+### Binary Search
 
-> In mathematics, graph theory is the study of graphs, which are mathematical structures used to model pairwise relations between objects. A graph in this context is made up of vertices, nodes, or points which are connected by edges, arcs, or lines.  
+| Algorithm                                                    | Description                                                  | Time Complexity |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | --------------- |
+| binary_search_recur(arr, find, start, end)                   | Recursive algorithm. Halves search                           | O(nlgn)         |
+| binary_search_iter(arr, find, start, end)                    | Iterative algorithm. Halves search                           | O(nlgn)         |
+| binary_search_jump(arr, find)                                | Alternative iterative algorithm. Jump forward and search     | O(nlgn)         |
+| find_changing_point(func, start, max_range)                  | Function to find a value for which a given function changes from False to True. (function must only accept int) | ~O(nlgn)        |
+| find_maximum_point(func, start, max_range)                   | Finds a maximum point when given a function. (function must only accept int) | ~O(lgn)         |
+| function_change_position(function, initial_jump, minimum_accuracy=1e-6) | Find position where boolean function change. Function has to accept a number and return True False (F F F F F F F T T T T) | ~O(lgn)         |
 
-Basic algorithms of graph theory.
-
-- Graph Representation
-- Graph Traversal
-- Shortest Paths
-- Trees
-
-## Number Theory
-
-![Number Theory](number-theory/README/number-theory-1.png)
-
-> Number theory, is a branch of pure mathematics devoted primarily to the study of the integers. 
-
-Basic algorithms of number theory.
-
-- Primes and Factors

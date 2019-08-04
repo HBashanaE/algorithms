@@ -1,7 +1,6 @@
 import unittest
 
 import a_binary_search
-import b_binary_search_func
 
 
 class TestBinarySearch(unittest.TestCase):
@@ -32,10 +31,10 @@ class TestBinarySearchFunc(unittest.TestCase):
         self.example2 = lambda x: -x ** 2 + 4 * x - 4
 
     def test_find_changing_point(self):
-        self.assertEqual(b_binary_search_func.find_changing_point(self.example, 0, 1000000000), 569857489)
+        self.assertEqual(a_binary_search.find_changing_point(self.example, 0, 1000000000), 569857489)
 
     def test_find_maximum_point(self):
-        self.assertEqual(b_binary_search_func.find_maximum_point(self.example2, 0, 10), 2)
+        self.assertEqual(a_binary_search.find_maximum_point(self.example2, 0, 10), 2)
 
 
 if __name__ == '__main__':

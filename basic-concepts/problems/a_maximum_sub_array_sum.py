@@ -1,40 +1,4 @@
-"""Demonstrating a classic problem that has 3 possible asymptotic times"""
-
-
-def maximum_sub_array_sum_1(arr):
-    """Answer which compares all possible pairs for
-    starting point and ending point and
-    uses another internal loop to calculate sum
-    Time Complexity: O(n^3)"""
-
-    _max = -float("inf")
-    for start in range(len(arr)):
-        for end in range(start, len(arr)):
-            _sum = 0
-            for ind in range(start, end + 1):
-                _sum += arr[ind]
-            if _max < _sum:
-                _max = _sum
-    return _max
-
-
-def maximum_sub_array_sum_2(arr):
-    """Answer which compares all possible pairs for
-        starting point and ending point but
-        dynamically calculate sum when start and end changes
-        Time Complexity: O(n^2)"""
-
-    _max = -float("inf")
-    for start in range(len(arr)):
-        sum_till_end = 0
-        for end in range(start, len(arr)):
-            sum_till_end += arr[end]
-            if _max < sum_till_end:
-                _max = sum_till_end
-    return _max
-
-
-def maximum_sub_array_sum_3(arr):
+def maximum_sub_array_sum(arr):
     """For each position find the maximum sum that is possible
     for that position
     That means either 'last_value + this_value' or 'this_value'
@@ -55,3 +19,40 @@ def maximum_sub_array_sum_3(arr):
             _max = max_sum_arr[j]
     return _max
 
+# -------------------------------------------------------
+# Longest Increasing  Subsequence
+# -------------------------------------------------------
+
+
+def longest_increasing_subsequence(arr):
+    """ 
+    Find maximum increasing subsquence(not continous)
+    O(nlgn)
+    """
+
+    arr.sort()
+    longest = [0] * len(arr)
+    for i in range(len(arr)):
+        _max = 0
+        for j in range(i):
+            if arr[j] < arr[i] and _max < longest[j]:
+                _max = longest[j]
+        longest[i] = _max + 1
+    return max(longest)
+
+# -------------------------------------------------------
+# PATHS IN A GRID
+# -------------------------------------------------------
+
+
+def paths_in_grid(n):
+    """
+    Find paths in a grid
+    O(n**2)
+    """
+    grid = [[1 if (_c == n - 1 or _r == n - 1) else 0 for _c in range(n)]
+            for _r in range(n)]
+    for r in range(n - 2, -1, -1):
+        for c in range(n - 2, -1, -1):
+            grid[r][c] = grid[r + 1][c] + grid[r][c + 1]
+    return grid[0][0]

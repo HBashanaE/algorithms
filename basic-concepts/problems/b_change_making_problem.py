@@ -1,3 +1,8 @@
+# -------------------------------------------------------
+# Coin Problem - Find number of minmum coins to make a change
+# -------------------------------------------------------
+
+
 def min_coins(coin_set, p, solved):
     """Recursive solution with dynamic programing"""
     if p < 0:
@@ -26,6 +31,10 @@ def min_coins_iter(coin_set, p):
     return solved[p]
 
 
+# -------------------------------------------------------
+# Method to make the change by using minimum number of coins
+# -------------------------------------------------------
+
 def min_coins_iter_record(coin_set, p):
     """Iterative solution which records the best solution"""
     solved = [0]
@@ -47,9 +56,9 @@ def min_coins_iter_record(coin_set, p):
     return record
 
 
-# ---------------------------------
-# COINS PROBLEM - ALL SOLUTIONS
-# ---------------------------------
+# -------------------------------------------------------
+# Number of ways to select coins to make a change
+# -------------------------------------------------------
 
 def all_ways_to_select_coins(coin_set, p, solved):
     """All solutions to create a sum of money. Recursive."""
@@ -65,53 +74,8 @@ def all_ways_to_select_coins(coin_set, p, solved):
     return solved[p]
 
 
-print(min_coins([1, 2, 3, 5, 10, 20, 50, 100, 200], 223, {}))
-print(min_coins_iter([1, 2, 3, 5, 10, 20, 50, 100, 200], 223))
-print(min_coins_iter_record([1, 2, 3, 5, 10, 20, 50, 100, 200], 223))
-print(all_ways_to_select_coins([1, 2, 3, 5, 10, 20, 50, 100, 200], 10, {}))
-"""
-    
-    # ---------------------------------
-    # LONGEST INCREASING SUBSEQUENCE
-    # ---------------------------------
-    
-    def longest_incr_subs(arr):
-        longest = [0] * len(arr)
-        for i in range(len(arr)):
-            _max = 0
-            for j in range(i):
-                if arr[j] < arr[i] and _max < longest[j]:
-                    _max = longest[j]
-            longest[i] = _max + 1
-        return max(longest)
-    
-    
-    def longest_incr_subs_nlogn(arr):
-        arr.sort()
-        longest = [0] * len(arr)
-        for i in range(len(arr)):
-            _max = 0
-            for j in range(i):
-                if arr[j] < arr[i] and _max < longest[j]:
-                    _max = longest[j]
-            longest[i] = _max + 1
-        return max(longest)
-    
-    
-    longest_incr_subs_nlogn([6, 2, 5, 1, 7, 4, 8, 3])
-    
-    
-    # ---------------------------------
-    # PATHS IN A GRID
-    # ---------------------------------
-    
-    def paths_in_grid(n):
-        grid = [[1 if (_c == n - 1 or _r == n - 1) else 0 for _c in range(n)] for _r in range(n)]
-        for r in range(n - 2, -1, -1):
-            for c in range(n - 2, -1, -1):
-                grid[r][c] = grid[r + 1][c] + grid[r][c + 1]
-        return grid[0][0]
-    
-    
-    paths_in_grid(70)
-"""
+if __name__ == "__main__":
+    print(min_coins([1, 2, 3, 5, 10, 20, 50, 100, 200], 223, {}))
+    print(min_coins_iter([1, 2, 3, 5, 10, 20, 50, 100, 200], 223))
+    print(min_coins_iter_record([1, 2, 3, 5, 10, 20, 50, 100, 200], 223))
+    print(all_ways_to_select_coins([1, 2, 3, 5, 10, 20, 50, 100, 200], 10, {}))

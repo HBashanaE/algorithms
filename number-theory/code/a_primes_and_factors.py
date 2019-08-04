@@ -139,6 +139,7 @@ def lcm(a, b):
     return _lcm
 
 
+# Euler Totient Function
 def count_co_primes(number: int) -> int:
     """Gets all co primes i of number such as 1<=i<=number
     Time Complexity: O(sqrt(n))"""
@@ -158,3 +159,10 @@ def count_co_primes(number: int) -> int:
     if number > 1:
         co_primes *= (number - 1)
     return co_primes
+
+
+def general_modular_inverse(n, p):
+    """Find Modullar inverse of any number where n and p are coprime
+    Time Complexity = sqrt(n)"""
+    phi_n = count_co_primes(n)
+    return pow(n, phi_n-1, p)
